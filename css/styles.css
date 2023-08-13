@@ -426,6 +426,7 @@ main {
 
 .customer-list-item {
    display: flex;
+   height: 88px;
    flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 
@@ -433,7 +434,6 @@ main {
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 16px 30px;
    border-radius: 4px;
    width: 100%;
    border: 1px solid var(--lightslate);
@@ -461,7 +461,7 @@ main {
 
 .footer-container {
    display: flex;
-   align-items: flex-start;
+   align-items: baseline
 }
 
 .footer-wrap-info:not(:last-child) {
@@ -482,9 +482,7 @@ main {
    max-width: 264px;
 }
 
-.footer-social {
-   align-items: baseline,
-}
+.footer-social {}
 
 .footer-titel {
    color: var(--white);
@@ -608,8 +606,8 @@ main {
    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.gallery-list-link:hover .overlay-text,
-.gallery-list-link:focus .overlay-text {
+.gallery-list-link:hover .gallery-overlay-text,
+.gallery-list-link:focus .gallery-overlay-text {
    transform: translateY(0%);
 }
 
@@ -627,7 +625,7 @@ main {
 
 .gallery-list-text {}
 
-.overlay-text {
+.gallery-overlay-text {
    content: '';
    position: absolute;
    top: 0;
@@ -659,24 +657,24 @@ main {
    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.is-hidden {
    opacity: 0;
    visibility: hidden;
    pointer-events: none;
 }
 
-.modal {
+.modal-blok {
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%) scale(1);
    width: 408px;
    min-height: 584px;
-   border-radius: 4px;
    background-color: #fcfcfc;
    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 1px 3px rgba(0, 0, 0, 0.12),
       0px 2px 1px rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -686,18 +684,19 @@ main {
    position: absolute;
    top: 24px;
    right: 24px;
-
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
    display: flex;
    align-items: center;
    justify-content: center;
+   background-color: #e7e9fc;
    border: 1px solid rgba(0, 0, 0, 0.1);
    padding: 0;
-   width: 24px;
-   height: 24px;
-   background-color: #e7e9fc;
-   border-radius: 50%;
+
    cursor: pointer;
-   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
